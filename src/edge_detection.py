@@ -1,4 +1,4 @@
-__author__ = 'patrice'
+__author__ = 'patrice gargiolo'
 from skimage import filter
 from skimage.color import rgb2gray
 from skimage.restoration import denoise_tv_chambolle
@@ -8,9 +8,18 @@ from skimage.segmentation import clear_border
 
 def detect_edges(image_array):
     """ Detect edges in a given image
-    Takes a numpy.array representing an image, apply edges detection and return a numpy.array
-    :param image_array:
-    :return:
+    Takes a numpy.array representing an image,
+    apply filters and edge detection and return a numpy.array
+
+    Parameters
+    ----------
+    image_array : ndarray (2D)
+        Image data to be processed. Detect edges on this 2D array representing the image
+
+    Returns
+    -------
+    edges : ndarray (2D)
+        Edges of an image.
     """
     #Transform image into grayscale
     img = rgb2gray(image_array)

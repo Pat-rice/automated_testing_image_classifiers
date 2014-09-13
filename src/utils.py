@@ -11,6 +11,7 @@ def compress(matrix):
     c.append([sequence - 1, previous])
     return c
 
+
 def decompress(matrix):
     d = []
     for s in matrix:
