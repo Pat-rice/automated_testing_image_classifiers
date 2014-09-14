@@ -1,24 +1,24 @@
-def compress(matrix):
-    previous = matrix[0]
-    c = []
-    sequence = 1
-    for i in matrix:
-        if i != previous:
-            c.append([sequence - 1, previous])
-            sequence = 1
-        sequence += 1
-        previous = i
-    c.append([sequence - 1, previous])
-    return c
+__author__ = 'patrice'
+import mongo_driver
+from PIL import Image
+import image_processing
+import numpy as np
+import matplotlib.pyplot as plt
+import io
+def test_edges():
+    raw_img = mongo_driver.load_one_and_show(6000)
+    try:
+        image_read = Image.open(raw_img)
+        #Detect edges
+        img_edge = image_processing.detect_edges(np.array(image_read))
 
+        # display results
+        fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 3))
+        ax1.imshow(img_edge, cmap=plt.cm.gray)
+        ax2.imshow(image_read)
+        plt.show()
 
-def decompress(matrix):
-    d = []
-    for s in matrix:
-        for t in range(s[0]):
-            d.append(s[1])
-    return d
+    except Exception as e:
+        print(e)
 
-# flat = np.array([[0,1],[1,0],[0,0],[1,1],[0,1],[1,1],[1,0],[0,1],[0,1],[1,1]]).flatten()
-# cp = compress(flat)
-# print(np.array(decompress(cp)).flatten())
+test_edges()

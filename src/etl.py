@@ -5,8 +5,9 @@ import mimetypes
 import os
 import io
 import numpy as np
-import edge_detection
+import image_processing
 from PIL import Image
+from skimage.transform import rescale
 
 
 def load_images_from_urls():
@@ -32,8 +33,8 @@ def load_images_from_urls():
                     mongo_driver.save_raw_image(r.raw.data, url, mime_type, file)
                     total_added += 1
                 except Exception as e:
-                    # print('not an image : {}'.format(url))
-                    # print(e)
+                    print('not an image : {}'.format(url))
+                    print(e)
                     continue
 
             print('end {}'.format(file))
@@ -48,41 +49,44 @@ def find_edges_and_save():
         try:
             image_read = Image.open(raw_img)
             #Detect edges
-            img_edge = edge_detection.detect_edges(np.array(image_read))
-            ##TODO add matrix compression
+            img_edge = image_processing.detect_edges(np.array(image_read))
             #Save it to DB
-            # mongo_driver.save_edges(np.array(img_edge).tolist(), raw_img.filename, raw_img.category, raw_img._id)
-            mongo_driver.save_full_edges(np.array(img_edge).tolist(), raw_img.filename, raw_img.category, raw_img._id)
+            mongo_driver.save_edges(np.array(img_edge).tolist(), raw_img.filename, raw_img.category, raw_img._id)
             total_ok += 1
         except Exception as e:
             print(e)
             total_notok += 1
             continue
-    print(total_ok)
-    print(total_notok)
-
-find_edges_and_save()
+    print('Total edges saved : {}'.format(total_ok))
+    print('Total errors : {}'.format(total_notok))
 
 
+def normalize_dataset():
+    max_pixels = 40000
+    all_categories = mongo_driver.get_categories_values()
+    i = 0
+    for category in all_categories:
+        print("adding category : {}".format(category))
+        all_edges_cursor = mongo_driver.get_edges_from_category(category, 900)
 
+        for row in all_edges_cursor:
 
-import matplotlib.pyplot as plt
-import io
-def test_edges():
-    raw_img = mongo_driver.load_one_and_show(6000)
-    try:
-        image_read = Image.open(raw_img)
-        #Detect edges
-        img_edge = edge_detection.detect_edges(np.array(image_read))
+            #Scale the image edges to normalize it
+            edges = np.array(row['edges_data'])
+            edges = np.asfarray(edges)
+            max_dim = np.max(edges.shape)
+            scale = 200 / max_dim
+            edges_scaled = rescale(edges, scale)
 
-        # display results
-        fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 3))
-        ax1.imshow(img_edge, cmap=plt.cm.gray)
-        ax2.imshow(image_read)
-        plt.show()
+            # Flatten 2D edges to 1D vector
+            pixels_vector = np.array(edges_scaled).flatten()
 
-    except Exception as e:
-        print(e)
+            if pixels_vector.size < max_pixels:
+                diff = max_pixels - pixels_vector.size
+                #Fill up vector with false values to normalise images
+                pixels_vector = np.concatenate([pixels_vector, [False] * diff])
 
-# test_edges()
+            #Save it to DB
+            mongo_driver.save_normalized_data(np.array(pixels_vector).tolist(), i)
+        i += 1
 
