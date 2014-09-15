@@ -44,7 +44,7 @@ def run_models_comparison():
     idx = 0
     for nd in normalized_data:
         in_memory_dataset[idx] = np.array(nd['vector'])
-        in_memory_targets[idx] = nd['targets']
+        in_memory_targets[idx] = nd['target']
         idx += 1
     print('finished loading')
 

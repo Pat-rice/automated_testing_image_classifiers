@@ -25,4 +25,4 @@ def run_flow(flow_id):
         classifiers.run_models_comparison()
 
 #Start flow
-run_flow(4)
+run_flow(1)
