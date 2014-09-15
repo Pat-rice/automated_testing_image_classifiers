@@ -4,18 +4,26 @@ from PIL import Image
 import image_processing
 import numpy as np
 import matplotlib.pyplot as plt
-import io
+
 def test_edges():
-    raw_img = mongo_driver.load_one_and_show(6000)
+    """
+    Function to experiment with the edge detection
+    Load one image, detect edges and display it alongside the original image
+    This function is not part of the main application
+    :return:
+    """
+    raw_img = mongo_driver.load_one_and_show(8)
     try:
         image_read = Image.open(raw_img)
         #Detect edges
-        img_edge = image_processing.detect_edges(np.array(image_read))
+        img_edge = image_processing.detect_edges(np.array(image_read), True)
 
         # display results
-        fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(8, 3))
-        ax1.imshow(img_edge, cmap=plt.cm.gray)
-        ax2.imshow(image_read)
+        fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, figsize=(5, 3))
+        ax1.set_axis_off()
+        ax1.imshow(img_edge, cmap=plt.cm.gray, interpolation='nearest')
+        ax2.imshow(image_read, interpolation='nearest')
+        plt.axis('off')
         plt.show()
 
     except Exception as e:

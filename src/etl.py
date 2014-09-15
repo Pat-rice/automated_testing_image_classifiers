@@ -8,9 +8,18 @@ import numpy as np
 import image_processing
 from PIL import Image
 from skimage.transform import rescale
+import configparser
+
+#Load config file
+config = configparser.ConfigParser()
+config.read('../project.cfg')
 
 
 def load_images_from_urls():
+    """
+    Read list of urls from resources folder, try to download every image and save it to the database
+    :return:
+    """
     total_added = 0
     #List of the urls files
     list_files = os.listdir('../resources')
@@ -32,6 +41,7 @@ def load_images_from_urls():
                     # save raw data to DB
                     mongo_driver.save_raw_image(r.raw.data, url, mime_type, file)
                     total_added += 1
+
                 except Exception as e:
                     print('not an image : {}'.format(url))
                     print(e)
@@ -62,12 +72,14 @@ def find_edges_and_save():
 
 
 def normalize_dataset():
-    max_pixels = 40000
+    max_pixels = config.getint('image_processing', 'max_number_normalised_pixels')
+    images_per_category = config.getint('classifiers', 'max_number_images_per_category')
+    max_side_size = config.getint('image_processing', 'max_side_size')
     all_categories = mongo_driver.get_categories_values()
     i = 0
     for category in all_categories:
         print("adding category : {}".format(category))
-        all_edges_cursor = mongo_driver.get_edges_from_category(category, 900)
+        all_edges_cursor = mongo_driver.get_edges_from_category(category, images_per_category)
 
         for row in all_edges_cursor:
 
@@ -75,7 +87,7 @@ def normalize_dataset():
             edges = np.array(row['edges_data'])
             edges = np.asfarray(edges)
             max_dim = np.max(edges.shape)
-            scale = 200 / max_dim
+            scale = max_side_size / max_dim
             edges_scaled = rescale(edges, scale)
 
             # Flatten 2D edges to 1D vector

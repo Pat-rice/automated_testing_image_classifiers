@@ -1389,3 +1389,798 @@ avg / total       0.36      0.35      0.35       675
 
 
 
+#categories:1;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.27585530281066895;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00        25
+
+
+
+#categories:1;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.30826807022094727;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        57
+
+avg / total       1.00      1.00      1.00        57
+
+
+
+#categories:1;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.4445502758026123;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        75
+
+avg / total       1.00      1.00      1.00        75
+
+
+
+#categories:1;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.17447304725646973;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       113
+
+avg / total       1.00      1.00      1.00       113
+
+
+
+#categories:1;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.25379014015197754;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       225
+
+avg / total       1.00      1.00      1.00       225
+
+
+
+#categories:1;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:0.17422747611999512;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00        25
+
+
+
+#categories:1;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:0.3162567615509033;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        57
+
+avg / total       1.00      1.00      1.00        57
+
+
+
+#categories:1;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:0.29329705238342285;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        75
+
+avg / total       1.00      1.00      1.00        75
+
+
+
+#categories:1;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:0.17680692672729492;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       113
+
+avg / total       1.00      1.00      1.00       113
+
+
+
+#categories:1;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:0.24387025833129883;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       225
+
+avg / total       1.00      1.00      1.00       225
+
+
+
+#categories:1;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:0.1767268180847168;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00        25
+
+
+
+#categories:1;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:0.2749748229980469;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        57
+
+avg / total       1.00      1.00      1.00        57
+
+
+
+#categories:1;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:0.300523042678833;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        75
+
+avg / total       1.00      1.00      1.00        75
+
+
+
+#categories:1;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:0.18193912506103516;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       113
+
+avg / total       1.00      1.00      1.00       113
+
+
+
+#categories:1;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:0.2867743968963623;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       225
+
+avg / total       1.00      1.00      1.00       225
+
+
+
+#categories:1;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.1882951259613037;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00        25
+
+
+
+#categories:1;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.27127695083618164;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        57
+
+avg / total       1.00      1.00      1.00        57
+
+
+
+#categories:1;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.2899768352508545;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        75
+
+avg / total       1.00      1.00      1.00        75
+
+
+
+#categories:1;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.18192768096923828;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       113
+
+avg / total       1.00      1.00      1.00       113
+
+
+
+#categories:1;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.2863345146179199;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       225
+
+avg / total       1.00      1.00      1.00       225
+
+
+
+#categories:1;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:0.16853594779968262;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00        25
+
+
+
+#categories:1;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:0.2694976329803467;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        57
+
+avg / total       1.00      1.00      1.00        57
+
+
+
+#categories:1;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:0.2915773391723633;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00        75
+
+avg / total       1.00      1.00      1.00        75
+
+
+
+#categories:1;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:0.18051719665527344;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       113
+
+avg / total       1.00      1.00      1.00       113
+
+
+
+#categories:1;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:0.2809882164001465;
+             precision    recall  f1-score   support
+
+        0.0       1.00      1.00      1.00       225
+
+avg / total       1.00      1.00      1.00       225
+
+
+
+#categories:2;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:0.7831308841705322;
+             precision    recall  f1-score   support
+
+        0.0       0.45      0.65      0.54        23
+        1.0       0.53      0.33      0.41        27
+
+avg / total       0.49      0.48      0.47        50
+
+
+
+#categories:2;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:1.198669672012329;
+             precision    recall  f1-score   support
+
+        0.0       0.56      0.69      0.62        62
+        1.0       0.47      0.33      0.39        51
+
+avg / total       0.52      0.53      0.52       113
+
+
+
+#categories:2;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:1.6062521934509277;
+             precision    recall  f1-score   support
+
+        0.0       0.53      0.66      0.59        70
+        1.0       0.62      0.50      0.56        80
+
+avg / total       0.58      0.57      0.57       150
+
+
+
+#categories:2;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:2.5138778686523438;
+             precision    recall  f1-score   support
+
+        0.0       0.50      0.55      0.53       110
+        1.0       0.53      0.48      0.50       115
+
+avg / total       0.52      0.52      0.51       225
+
+
+
+#categories:2;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0),
+          n_jobs=-1);
+model:RandomForestClassifier(bootstrap=True, compute_importances=None,
+            criterion='gini', max_depth=None, max_features='auto',
+            max_leaf_nodes=None, min_density=None, min_samples_leaf=1,
+            min_samples_split=2, n_estimators=50, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0);
+time:6.034108400344849;
+             precision    recall  f1-score   support
+
+        0.0       0.55      0.58      0.56       230
+        1.0       0.54      0.51      0.52       220
+
+avg / total       0.54      0.54      0.54       450
+
+
+
+#categories:2;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:5.597768306732178;
+             precision    recall  f1-score   support
+
+        0.0       0.52      0.57      0.54        23
+        1.0       0.60      0.56      0.58        27
+
+avg / total       0.56      0.56      0.56        50
+
+
+
+#categories:2;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:11.783137559890747;
+             precision    recall  f1-score   support
+
+        0.0       0.57      0.47      0.51        62
+        1.0       0.47      0.57      0.51        51
+
+avg / total       0.52      0.51      0.51       113
+
+
+
+#categories:2;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:15.650383472442627;
+             precision    recall  f1-score   support
+
+        0.0       0.52      0.49      0.50        70
+        1.0       0.58      0.61      0.59        80
+
+avg / total       0.55      0.55      0.55       150
+
+
+
+#categories:2;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:23.443153381347656;
+             precision    recall  f1-score   support
+
+        0.0       0.54      0.51      0.53       110
+        1.0       0.56      0.59      0.57       115
+
+avg / total       0.55      0.55      0.55       225
+
+
+
+#categories:2;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None),
+          n_jobs=-1);
+model:AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+          learning_rate=1.0, n_estimators=50, random_state=None);
+time:47.253193616867065;
+             precision    recall  f1-score   support
+
+        0.0       0.56      0.46      0.50       230
+        1.0       0.53      0.63      0.57       220
+
+avg / total       0.55      0.54      0.54       450
+
+
+
+#categories:2;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:1.4217076301574707;
+             precision    recall  f1-score   support
+
+        0.0       0.43      0.43      0.43        23
+        1.0       0.52      0.52      0.52        27
+
+avg / total       0.48      0.48      0.48        50
+
+
+
+#categories:2;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:5.805648326873779;
+             precision    recall  f1-score   support
+
+        0.0       0.56      0.39      0.46        62
+        1.0       0.46      0.63      0.53        51
+
+avg / total       0.51      0.50      0.49       113
+
+
+
+#categories:2;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:9.92599368095398;
+             precision    recall  f1-score   support
+
+        0.0       0.47      0.59      0.52        70
+        1.0       0.54      0.42      0.48        80
+
+avg / total       0.51      0.50      0.50       150
+
+
+
+#categories:2;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:21.54317831993103;
+             precision    recall  f1-score   support
+
+        0.0       0.47      0.62      0.53       110
+        1.0       0.47      0.32      0.38       115
+
+avg / total       0.47      0.47      0.45       225
+
+
+
+#categories:2;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False),
+          n_jobs=-1);
+model:NuSVC(cache_size=200, coef0=0.0, degree=3, gamma=0.0, kernel='rbf',
+   max_iter=-1, nu=0.5, probability=False, random_state=None,
+   shrinking=True, tol=0.001, verbose=False);
+time:83.25701022148132;
+             precision    recall  f1-score   support
+
+        0.0       0.54      0.49      0.51       230
+        1.0       0.51      0.56      0.53       220
+
+avg / total       0.52      0.52      0.52       450
+
+
+
+#categories:2;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.5322329998016357;
+             precision    recall  f1-score   support
+
+        0.0       0.43      0.57      0.49        23
+        1.0       0.50      0.37      0.43        27
+
+avg / total       0.47      0.46      0.46        50
+
+
+
+#categories:2;#imagesPerCat:200;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.43767881393432617;
+             precision    recall  f1-score   support
+
+        0.0       0.53      0.50      0.51        62
+        1.0       0.43      0.45      0.44        51
+
+avg / total       0.48      0.48      0.48       113
+
+
+
+#categories:2;#imagesPerCat:300;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.557694673538208;
+             precision    recall  f1-score   support
+
+        0.0       0.47      0.71      0.57        70
+        1.0       0.55      0.30      0.39        80
+
+avg / total       0.51      0.49      0.47       150
+
+
+
+#categories:2;#imagesPerCat:400;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:0.6889443397521973;
+             precision    recall  f1-score   support
+
+        0.0       0.56      0.49      0.52       110
+        1.0       0.56      0.63      0.59       115
+
+avg / total       0.56      0.56      0.56       225
+
+
+
+#categories:2;#imagesPerCat:500;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True),
+          n_jobs=-1);
+model:BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True);
+time:1.2178869247436523;
+             precision    recall  f1-score   support
+
+        0.0       0.55      0.73      0.63       230
+        1.0       0.57      0.38      0.46       220
+
+avg / total       0.56      0.56      0.54       450
+
+
+
+#categories:2;#imagesPerCat:100;res:200.0x200.0;
+strategy:OneVsRestClassifier(estimator=Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]),
+          n_jobs=-1);
+model:Pipeline(steps=[('rbm', BernoulliRBM(batch_size=10, learning_rate=0.1, n_components=256, n_iter=10,
+       random_state=None, verbose=0)), ('logistic', RidgeClassifierCV(alphas=array([  0.1,   1. ,  10. ]), class_weight=None,
+         cv=None, fit_intercept=True, loss_func=None, normalize=False,
+         score_func=None, scoring=None))]);
+time:51.41159129142761;
+             precision    recall  f1-score   support
+
+        0.0       0.50      0.78      0.61        23
+        1.0       0.64      0.33      0.44        27
+
+avg / total       0.58      0.54      0.52        50
+
+
+

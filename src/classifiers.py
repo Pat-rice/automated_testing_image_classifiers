@@ -9,10 +9,15 @@ from sklearn.naive_bayes import BernoulliNB
 from sklearn.neural_network import BernoulliRBM
 from sklearn.pipeline import Pipeline
 from sklearn import linear_model
+import configparser
+
+#Load config file
+config = configparser.ConfigParser()
+config.read('../project.cfg')
 
 
 def run_models_comparison():
-    """ Configuration of classifier builder
+    """ Build models with different configuration and save the results to an external file
         Parameters
         ----------
         nbCategories : integer
@@ -30,9 +35,11 @@ def run_models_comparison():
 
     """
     print('loading data in memory')
-    max_number_image_per_category = 900
-    in_memory_dataset = np.zeros(shape=(9000, 40000))
-    in_memory_targets = np.zeros(9000)
+    max_number_images_per_category = config.getint('classifiers', 'max_number_images_per_category')
+    max_pixels = config.getint('image_processing', 'max_number_normalised_pixels')
+    total_images = config.getint('classifiers', 'total_images')
+    in_memory_dataset = np.zeros(shape=(total_images, max_pixels))
+    in_memory_targets = np.zeros(total_images)
     normalized_data = mongo_driver.get_normalized_data()
     idx = 0
     for nd in normalized_data:
@@ -49,14 +56,13 @@ def run_models_comparison():
             for kz in range(1, 6):
 
                 print('training nb category {}, model {}, nb image {}'.format(ix, jy, kz * 100))
-                nbCategories = ix
+                nb_categories = ix
                 limit_images_per_categories = 100 * kz
                 model_id = jy
-                max_pixels = 40000
 
                 #Get a subset of data from the dataset in memory
-                index1 = int(nbCategories * max_number_image_per_category)
-                index2 = int(max_number_image_per_category / limit_images_per_categories)
+                index1 = int(nb_categories * max_number_images_per_category)
+                index2 = int(max_number_images_per_category / limit_images_per_categories)
                 temp_dataset = in_memory_dataset[:index1:index2]
                 temp_targets = in_memory_targets[:index1:index2]
 
@@ -97,26 +103,26 @@ def run_models_comparison():
 
 
                     #Write results to file
-                    resFile = open("../results/results.txt", "a")
-                    resFile.write('#categories:{};'.format(nbCategories))
-                    resFile.write('#imagesPerCat:{};'.format(limit_images_per_categories))
-                    resFile.write('res:{}x{};\n'.format(np.sqrt(max_pixels), np.sqrt(max_pixels)))
-                    resFile.write('strategy:{};\n'.format(ovaM))
-                    resFile.write('model:{};\n'.format(model))
-                    resFile.write('time:{};\n'.format(totalTime))
-                    resFile.write('{}'.format(metrics.classification_report(targets_test, predictions)))
-                    resFile.write('\n\n\n')
-                    resFile.close()
+                    detailed_results = open("../results/results.txt", "a")
+                    detailed_results.write('#categories:{};'.format(nb_categories))
+                    detailed_results.write('#imagesPerCat:{};'.format(limit_images_per_categories))
+                    detailed_results.write('res:{}x{};\n'.format(np.sqrt(max_pixels), np.sqrt(max_pixels)))
+                    detailed_results.write('strategy:{};\n'.format(ovaM))
+                    detailed_results.write('model:{};\n'.format(model))
+                    detailed_results.write('time:{};\n'.format(totalTime))
+                    detailed_results.write('{}'.format(metrics.classification_report(targets_test, predictions)))
+                    detailed_results.write('\n\n\n')
+                    detailed_results.close()
 
-                    shortResFile = open("../results/average_results.csv", "a")
-                    shortResFile.write('{};'.format(nbCategories))
-                    shortResFile.write('{};'.format(limit_images_per_categories))
-                    shortResFile.write('{}x{};'.format(np.sqrt(max_pixels), np.sqrt(max_pixels)))
-                    shortResFile.write('{};'.format(model_id))
-                    shortResFile.write('{};'.format(metrics.precision_score(targets_test, predictions)))
-                    shortResFile.write('{};'.format(metrics.recall_score(targets_test, predictions)))
-                    shortResFile.write('{};'.format(metrics.f1_score(targets_test, predictions)))
-                    shortResFile.write('{};\n'.format(totalTime))
-                    shortResFile.close()
+                    csv_results = open("../results/average_results.csv", "a")
+                    csv_results.write('{};'.format(nb_categories))
+                    csv_results.write('{};'.format(limit_images_per_categories))
+                    csv_results.write('{}x{};'.format(np.sqrt(max_pixels), np.sqrt(max_pixels)))
+                    csv_results.write('{};'.format(model_id))
+                    csv_results.write('{};'.format(metrics.precision_score(targets_test, predictions)))
+                    csv_results.write('{};'.format(metrics.recall_score(targets_test, predictions)))
+                    csv_results.write('{};'.format(metrics.f1_score(targets_test, predictions)))
+                    csv_results.write('{};\n'.format(totalTime))
+                    csv_results.close()
                 except Exception as e:
                     print(e)
